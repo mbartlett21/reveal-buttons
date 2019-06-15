@@ -1,0 +1,286 @@
+button: focus {
+    outline: 0;
+}
+
+.show - outline button: focus {
+    outline: 2 px solid# ffffff !important;
+}
+
+/* Scrollbar */
+::-webkit - scrollbar {
+    width: 6 px;
+    height: 6 px;
+}
+
+::-webkit - scrollbar - track {
+    background - color: #3e3e3e;
+}
+
+::-webkit-scrollbar-thumb {
+    height: 15px;
+    width: 15px;
+    background-color: # 8 b8b8b;
+    border - radius: 3 px;
+}
+
+::-webkit - scrollbar - thumb: hover {
+    background - color: #9b9b9b;
+}
+
+::-webkit-scrollbar-corner {
+    background-color: # 333;
+}
+
+/* Background */
+html {
+    height: 100 %;
+}
+
+* {
+    font - size: 9 pt;
+    font - family: Arial;
+}
+
+body {
+    margin: 0;
+    padding: 10 px;
+    width: calc(100 % -20 px);
+    height: calc(100 % -20 px);
+    font - size: 0 px;
+    background: #333;
+    font-family: Arial;
+}
+
+div {
+    vertical-align: top;
+}
+
+/* Grid */
+
+.grid {
+    display: grid;
+    grid-gap: 1px;
+}
+
+.inline-grid {
+    display: inline-grid;
+    grid-gap: 1px;
+}
+
+.grid-cols2 {
+    grid-template-columns: repeat(2, 50px);
+}
+
+.grid-cols3 {
+    grid-template-columns: repeat(3, 50px);
+}
+
+.grid-cols4 {
+    grid-template-columns: repeat(4, 50px);
+}
+
+.grid-cols5 {
+    grid-template-columns: repeat(5, 50px);
+}
+
+.grid-cols6 {
+    grid-template-columns: repeat(6, 50px);
+}
+
+.grid-rows2 {
+    grid-template-rows: repeat(2, 50px);
+}
+
+.grid-rows3 {
+    grid-template-rows: repeat(3, 50px);
+}
+
+.grid-rows4 {
+    grid-template-rows: repeat(4, 50px);
+}
+
+.grid-rows5 {
+    grid-template-rows: repeat(5, 50px);
+}
+
+.grid-rows6 {
+    grid-template-rows: repeat(6, 50px);
+}
+
+.grid-medium,
+.grid-wide,
+.grid-large {
+    padding: 6px;
+
+}
+
+.grid-small:hover,
+.grid-medium:hover,
+.grid-wide:hover,
+.grid-large:hover {
+    border-color: # ffffff88;
+}
+
+.grid - small {
+    grid - column - end: span 1;
+    grid - row - end: span 1;
+    background: black;
+    border - width: 2 px;
+}
+
+.grid - medium {
+    grid - column - end: span 2;
+    grid - row - end: span 2;
+    background: black;
+    border - width: 2 px;
+}
+
+.grid - wide {
+    grid - column - end: span 4;
+    grid - row - end: span 2;
+    background: black;
+    border - width: 2 px;
+}
+
+.grid - large {
+    grid - column - end: span 4;
+    grid - row - end: span 4;
+    background: black;
+    line - height: 358 px;
+    text - align: left;
+    border - width: 2 px;
+}
+
+.grid - medium,
+.grid - wide {
+    line - height: 158 px;
+    text - align: left;
+}
+
+.grid - medium>img,
+.grid - large>img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 10 px;
+    width: 100 %;
+}
+
+.grid - wide>img {
+    position: absolute;
+    left: 25 %;
+    right: 25 %;
+    bottom: 5 px;
+    width: 50 %;
+}
+
+.grid - small>img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100 %;
+}
+
+.grid - col1 {
+    grid - column - start: 1;
+}
+
+.grid - col2 {
+    grid - column - start: 2;
+}
+
+.grid - col3 {
+    grid - column - start: 3;
+}
+
+.grid - col4 {
+    grid - column - start: 4;
+}
+
+.grid - col5 {
+    grid - column - start: 5;
+}
+
+.grid - row1 {
+    grid - row - start: 1;
+}
+
+.grid - row2 {
+    grid - row - start: 2;
+}
+
+.grid - row3 {
+    grid - row - start: 3;
+}
+
+.grid - row4 {
+    grid - row - start: 4;
+}
+
+.grid - row5 {
+    grid - row - start: 5;
+}
+
+/* Buttons */
+button {
+    box - sizing: border - box;
+    color: white;
+    border: 1 px solid;
+    border - color: transparent;
+    border - image: none;
+    background: transparent;
+    padding: 10 px;
+    min - height: 30 px;
+    min - width: 30 px;
+    overflow: hidden;
+    white - space: nowrap;
+    position: relative;
+    margin: 1 px;
+}
+
+button: disabled {
+    box - sizing: border - box;
+    color: #ccc;
+    border: 1 px solid transparent;
+    background: transparent;
+    padding: 10 px;
+    min - height: 30 px;
+    min - width: 30 px;
+    overflow: hidden;
+    white - space: nowrap;
+    position: relative;
+    margin: 1 px;
+}
+
+button.list {
+    display: block;
+    width: 100 %;
+    text - align: left;
+}
+
+.peek - element {
+    width: 350 px;
+    height: 350 px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin - left: -175 px;
+    margin - top: -175 px;
+    border - radius: 50 %;
+    /*filter: blur(100px);*/
+    /*background-color: white;*/
+    background: radial - gradient(#ffffff70, transparent 165 px);
+    pointer - events: none;
+    opacity: 0.9;
+    display: none;
+    mix - blend - mode: screen;
+    animation: fadein 0.15 s;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0.5;
+    }
+}
