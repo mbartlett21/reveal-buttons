@@ -11,9 +11,13 @@ Adds a reveal effect to buttons.
 The functions and variables below are used by the script; please do not edit them in any javascript you have on your page.
 
 `handleFirstTab` - Adds a white outline when the user tabs.
+
 `handleMouseDownOnce` - Handles when the mouse is pressed and removes the outline.
 
 `revealElements` - The elements that have a reveal effect.
+
 `revealReloadElements` - Reloads elements for reveal.
+
 `revealUpdateDisplay` - Called when the mouse is moved.
+
 `revealClearDisplay` - Called when the mouse moves out of the window
