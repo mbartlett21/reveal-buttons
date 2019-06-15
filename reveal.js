@@ -78,9 +78,9 @@ function revealUpdateDisplay(event) {
 
 function revealClearDisplay(event) {
     console.log("clearing")
-    for (var i = 0; i < peekElements.length; i++) {
-        peekElements[i].element.style.display = "none";
-        peekElements[i].parent.style.setProperty("border-image", "none");
+    for (var i = 0; i < revealElements.length; i++) {
+        revealElements[i].element.style.display = "none";
+        revealElements[i].parent.style.setProperty("border-image", "none");
     }
 }
 
