@@ -18,35 +18,43 @@ function handleMouseDownOnce() {
 window.addEventListener('keydown', handleFirstTab);
 
 
-
-// Used for hovered elements
+// Used for checking if an element is hovered
 if (!Element.prototype.matches) {
     Element.prototype.matches = Element.prototype.msMatchesSelector || Element.prototype.webkitMatchesSelector;
 }
 
-var peekElements = [];
-var elements = [];
-elements = Array.prototype.concat.apply(elements, document.getElementsByTagName("button"));
-//elements = Array.prototype.concat.apply(elements, document.getElementsByTagName("li"));
-for (var i = 0; i < elements.length; i++) {
-    const element = elements[i];
-    const peekElement = document.createElement("div");
-    peekElement.classList.add("peek-element");
-    element.appendChild(peekElement);
-    peekElements.push({
-        "element": peekElement,
-        "parent": element,
-        "list": element.classList.contains("list")
-    });
+var revealElements = [];
+
+function revealReloadElements() {
+    for (var i = 0; i < revealElements.length; i++) {
+        var element = revealElements[i].element;
+        element.parent.removeChild(element);
+    }
+    revealElements = [];
+    var elements = [];
+    elements = Array.prototype.concat.apply(elements, document.getElementsByTagName("button"));
+    //elements = Array.prototype.concat.apply(elements, document.getElementsByTagName("li"));
+    for (var i = 0; i < elements.length; i++) {
+        const element = elements[i];
+        const peekElement = document.createElement("div");
+        peekElement.classList.add("peek-element");
+        element.appendChild(peekElement);
+        revealElements.push({
+            "element": peekElement,
+            "parent": element,
+            "list": element.classList.contains("list")
+        });
+    }
 }
 
+revealReloadElements();
 
-function updateDisplay(event) {
+function revealUpdateDisplay(event) {
     console.log("updating hover")
     const x = event.clientX;
     const y = event.clientY;
-    for (var i = 0; i < peekElements.length; i++) {
-        const peekElementData = peekElements[i];
+    for (var i = 0; i < revealElements.length; i++) {
+        const peekElementData = revealElements[i];
         const peekElement = peekElementData.element;
         const parent = peekElementData.parent;
         const isHover = parent.matches(":hover");
@@ -68,7 +76,7 @@ function updateDisplay(event) {
 
 }
 
-function clearDisplay(event) {
+function revealClearDisplay(event) {
     console.log("clearing")
     for (var i = 0; i < peekElements.length; i++) {
         peekElements[i].element.style.display = "none";
@@ -76,6 +84,6 @@ function clearDisplay(event) {
     }
 }
 
-document.body.addEventListener("mousemove", updateDisplay);
-document.body.addEventListener("mouseenter", updateDisplay);
-document.body.addEventListener("mouseleave", clearDisplay);
+document.body.addEventListener("mousemove", revealUpdateDisplay);
+document.body.addEventListener("mouseenter", revealUpdateDisplay);
+document.body.addEventListener("mouseleave", revealClearDisplay);
