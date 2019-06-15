@@ -57,7 +57,7 @@ function revealUpdateDisplay(event) {
         const peekElementData = revealElements[i];
         const peekElement = peekElementData.element;
         const parent = peekElementData.parent;
-        const isHover = parent.matches(":hover");
+        const isHover = !parent.disabled && parent.matches(":hover");
         if ((!isHover && peekElementData.list) || parent.disabled) {
             peekElement.style.display = "none";
             parent.style.setProperty("border-image", "none");
