@@ -26,7 +26,7 @@ if (!Element.prototype.matches) {
 var revealElements = [];
 
 function revealReloadElements() {
-    for (var i = 0; i < revealElements.length; i++) {
+    for (var i = 0; i < revealElements.length; i++) try {
         var element = revealElements[i].element;
         element.parent.removeChild(element);
     }
