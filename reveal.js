@@ -29,7 +29,7 @@ function revealReloadElements() {
     for (var i = 0; i < revealElements.length; i++) try {
         var element = revealElements[i].element;
         element.parent.removeChild(element);
-    }
+    }catch(e){}
     revealElements = [];
     var elements = [];
     elements = Array.prototype.concat.apply(elements, document.getElementsByTagName("button"));
