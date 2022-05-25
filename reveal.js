@@ -19,20 +19,21 @@ window.addEventListener('keydown', handleFirstTab);
 
 
 // Used for checking if an element is hovered
-if (!Element.prototype.matches) {
+if (!Element.prototype.matches)
     Element.prototype.matches = Element.prototype.msMatchesSelector || Element.prototype.webkitMatchesSelector;
-}
 
 var revealElements = [];
 
 function revealReloadElements() {
-    for (var i = 0; i < revealElements.length; i++) try {
-        var element = revealElements[i].element;
-        element.parent.removeChild(element);
-    }catch(e){}
+    console.log("[reveal] Loading elements");
+    for (var i = 0; i < revealElements.length; i++)
+        try {
+            var element = revealElements[i].element;
+            element.parent.removeChild(element);
+        } catch (e) {}
+
     revealElements = [];
-    var elements = [];
-    elements = Array.prototype.concat.apply(elements, document.getElementsByTagName("button"));
+    var elements = Array.prototype.concat.apply([], document.getElementsByTagName("button"));
     //elements = Array.prototype.concat.apply(elements, document.getElementsByTagName("li"));
     for (var i = 0; i < elements.length; i++) {
         const element = elements[i];
@@ -47,10 +48,10 @@ function revealReloadElements() {
     }
 }
 
-revealReloadElements();
+window.addEventListener("load", revealReloadElements);
 
 function revealUpdateDisplay(event) {
-    console.log("updating hover")
+    console.log("[reveal] Updating display")
     const x = event.clientX;
     const y = event.clientY;
     for (var i = 0; i < revealElements.length; i++) {
@@ -77,7 +78,7 @@ function revealUpdateDisplay(event) {
 }
 
 function revealClearDisplay(event) {
-    console.log("clearing")
+    console.log("[reveal] Clearing display")
     for (var i = 0; i < revealElements.length; i++) {
         revealElements[i].element.style.display = "none";
         revealElements[i].parent.style.setProperty("border-image", "none");
